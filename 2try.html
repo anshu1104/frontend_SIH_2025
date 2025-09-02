@@ -1,0 +1,446 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedulonn - AI-Powered Timetable Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .feature-card {
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    .step-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .step-number {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(79, 172, 254, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-50">
+    <div class="container mx-auto px-6 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-clock text-white"></i>
+          </div>
+          <span class="text-xl font-bold text-gray-800">Schedulonn</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#why-choose" class="text-gray-600 hover:text-blue-600 transition-colors"
+            >Why Choose Schedulonn?</a
+          >
+          <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition-colors"
+            >How It Works</a
+          >
+          <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors"
+            >Contact</a
+          >
+        </div>
+        <button
+          class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-colors"
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white pt-32 pb-20">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Simplify Scheduling with<br />
+            <span class="text-yellow-300">Schedulonn</span>
+          </h1>
+          <p class="text-xl text-blue-100 mb-8">
+            Intuitive, AI-powered timetable software that creates conflict-free
+            schedules and manages teacher substitutions — all online, no
+            installations needed.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="cta-button text-white px-8 py-4 rounded-full font-bold text-lg"
+            >
+              Start Generating Now
+            </button>
+            <button
+              class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg border-2 border-white hover:bg-transparent hover:text-white transition-colors"
+            >
+              <i class="fas fa-play-circle mr-2"></i>Watch Demo
+            </button>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-white rounded-3xl p-6 shadow-2xl">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d9d81d2e-4c78-4254-aa77-7232e93aff43.png"
+              alt="Modern timetable interface with colorful schedule blocks"
+              class="w-full h-auto rounded-2xl"
+            />
+          </div>
+          <div
+            class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-xl"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+<section id="why-choose" class="py-20 bg-gray-50 relative">
+  <div class="container mx-auto px-6 max-w-7xl">
+    <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+      Why Choose <span class="text-purple-600">Schedulonn</span>?
+    </h2>
+
+    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
+      Simplify the entire scheduling process with our intuitive,
+      AI-powered timetable software. Schedulonn is packed with features
+      that help you create and manage conflict-free schedules and handle
+      teacher substitutions in minutes.
+    </p>
+
+    <!-- Features Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- AI-Powered Scheduling -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-purple-600 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-purple-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-robot text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">AI-Powered Scheduling</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Automatically detects conflicts, optimizes class arrangements, and ensures smooth scheduling.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Automatic conflict detection</li>
+          <li>✔ Smart resource optimization</li>
+          <li>✔ Instant schedule generation</li>
+        </ul>
+      </div>
+
+      <!-- Smart Substitute Management -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-blue-600 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-blue-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-user-friends text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">Smart Substitute Management</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Handle teacher absences with intelligent recommendations and real-time updates.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Intelligent teacher matching</li>
+          <li>✔ Real-time updates</li>
+          <li>✔ Comprehensive tracking</li>
+        </ul>
+      </div>
+
+      <!-- Easy Sharing -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-pink-600 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-pink-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-share-alt text-pink-600 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">Easy Sharing & Collaboration</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Instantly share schedules online with teachers, students, or parents in real time.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Real-time updates</li>
+          <li>✔ Multiple sharing formats</li>
+          <li>✔ Role-based access</li>
+        </ul>
+      </div>
+
+      <!-- Quick Editing -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-green-600 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-green-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-edit text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">Quick Editing & Regeneration</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Drag-and-drop editor to rearrange timetables and regenerate conflict-free versions.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Drag-and-drop interface</li>
+          <li>✔ Instant regeneration</li>
+          <li>✔ Change tracking</li>
+        </ul>
+      </div>
+
+      <!-- Access Anywhere -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-yellow-500 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-yellow-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-cloud text-yellow-500 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">Access Anywhere</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Fully online — no downloads required. Accessible from browser or mobile devices.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Browser-based access</li>
+          <li>✔ Mobile responsive</li>
+          <li>✔ Cloud storage</li>
+        </ul>
+      </div>
+
+      <!-- Security & Compliance -->
+      <div class="feature-card bg-white rounded-2xl shadow-lg p-8 border-t-4 border-indigo-600 hover:shadow-2xl transition-all">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-indigo-100 flex items-center justify-center rounded-xl">
+            <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+          </div>
+          <h3 class="ml-4 text-xl font-bold text-gray-800">Security & Compliance</h3>
+        </div>
+        <p class="text-gray-600 mb-4">
+          Data is fully protected with role-based access and compliance with regulations.
+        </p>
+        <ul class="space-y-2 text-gray-700">
+          <li>✔ Role-based access</li>
+          <li>✔ Data privacy protection</li>
+          <li>✔ Compliance-ready</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+        Create Your Timetable in 5 Simple Steps
+      </h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
+        Follow these simple steps to generate your perfect, conflict-free
+        schedule. Schedulonn handles the heavy lifting, so you can focus on
+        delivering great education.
+      </p>
+
+      <div class="grid md:grid-cols-5 gap-8">
+        <div class="step-card bg-white p-8 rounded-2xl relative">
+          <div class="step-number">1</div>
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6"
+          >
+            <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Easy Start</h3>
+          <p class="text-gray-600">
+            Enter Your Details — Start by adding classes, subjects, teachers,
+            and specific constraints. Schedulonn's intuitive interface makes
+            data entry simple and error-free.
+          </p>
+        </div>
+
+        <div class="step-card bg-white p-8 rounded-2xl relative">
+          <div class="step-number">2</div>
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6"
+          >
+            <i class="fas fa-check-double text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Auto-Check</h3>
+          <p class="text-gray-600">
+            Thorough Verification — Our platform automatically checks for
+            missing or conflicting information to ensure accurate, consistent
+            inputs before generating your timetable.
+          </p>
+        </div>
+
+        <div class="step-card bg-white p-8 rounded-2xl relative">
+          <div class="step-number">3</div>
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6"
+          >
+            <i class="fas fa-robot text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">AI-Powered</h3>
+          <p class="text-gray-600">
+            Generate Optimal Timetable — With one click, our AI-driven engine
+            processes your data and creates a conflict-free, highly efficient
+            schedule that meets your unique constraints.
+          </p>
+        </div>
+
+        <div class="step-card bg-white p-8 rounded-2xl relative">
+          <div class="step-number">4</div>
+          <div
+            class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+          >
+            <i class="fas fa-arrows-alt text-yellow-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Flexible</h3>
+          <p class="text-gray-600">
+            Adjust & Get Suggestions — Need fine-tuning? Simply drag-and-drop
+            to rearrange classes or teachers. Our system offers intelligent
+            suggestions to maintain an optimal layout.
+          </p>
+        </div>
+
+        <div class="step-card bg-white p-8 rounded-2xl relative">
+          <div class="step-number">5</div>
+          <div
+            class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6"
+          >
+            <i class="fas fa-share-alt text-pink-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Share</h3>
+          <p class="text-gray-600">
+            Download & Share — Export or print your timetable in multiple
+            formats, or share it online with staff and students - keeping
+            everyone on the same page, effortlessly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="gradient-bg py-20 text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">
+        Ready to Simplify Your Scheduling with Schedulonn?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        Join thousands of educators and students who trust Schedulonn for
+        smart, conflict-free timetables.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <!-- <button
+          class="cta-button text-white px-12 py-4 rounded-full font-bold text-lg"
+        >
+          Get Started Free
+        </button>
+        <button
+          class="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+        >
+          Schedule a Demo
+        </button> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Schedulonn</h3>
+          <p class="text-gray-400">
+            Intuitive AI-powered timetable software simplifying scheduling for
+            educators and students worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#why-choose"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Why Choose Schedulonn?</a
+              >
+            </li>
+            <li>
+              <a
+                href="#how-it-works"
+                class="text-gray-400 hover:text-white transition-colors"
+                >How It Works</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact Us</h4>
+          <ul class="space-y-2">
+            <li class="text-gray-400">support@schedulonn.com</li>
+            <li class="text-gray-400">+1 (555) 123-4567</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10
